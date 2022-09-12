@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="following.css">
+</head>
+<body>
+    
+    <div class="right-col">
+        <p class="suggestion-text"></p>
+
+        <!-- <div class="profile-card">
+            <div class="profile-pic">
+                <img src="img/cover 9.png" alt="">
+            </div>
+            <div>
+                <p class="username">modern_web_channel</p>
+                <p class="sub-text">followed bu user</p>
+            </div>
+            <button class="action-btn">follow</button>
+        </div> -->
+        
+        <% for(var i=0; i<following.length; i++) {%>
+
+            <div class="profile-card">
+                <div class="profile-pic">
+                    <!-- <img src="img/cover 9.png" alt=""> -->
+                    <img src="data:userimg/<%=array2[i].contentType%>;base64,
+                    <%=array2[i].data.toString('base64')%> " height="150px" width="150px" class="usrimg">
+                </div>
+                <div>
+                    <p class="username"><%= following[i] %></p>
+                    <p> </p>
+
+                </div>
+                <a href="http://localhost:3500/message/<%= following[i] %>"><button id="" class="action-btn">follow</button></a>
+            </div>
+            <!--<div class="profile-card">
+                <div class="profile-pic">
+                    <img src="img/cover 13.png" alt="">
+                </div>
+                <div>
+                    <p class="username">modern_web_channel</p>
+                    <p class="sub-text">followed bu user</p>
+                </div>
+                <button class="action-btn">follow</button>
+            </div> -->
+    
+            <% } %></div>
+
+
+    <script src="profile.js">
+
+    </script>
+
+</body>
+</html>

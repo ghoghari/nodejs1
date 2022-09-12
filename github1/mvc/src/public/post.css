@@ -1,0 +1,14 @@
+.inp_con{
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+#myFile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 14;
+}

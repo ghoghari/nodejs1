@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+   
+    <form method="post" enctype="multipart/form-data">
+
+    <div class="class" style="display: flex; align-items: center;">
+        <img src="cross.png" alt="" height="15px" width="15px">
+        <p style="margin-left: 30px;">New Post</p>
+        <button class="btn" style="background: none; border:none" type="submit"><img src="arrow.jfif" style="margin-left: 1200px;" alt="" height="15px" width="15px"></button>
+    </div>
+
+    <!-- <div class="mian">
+        <div class="inp_con">
+
+            <input type="file" id="myFile" name="filename">
+            <img style="border-radius: 50%;" src="profile_pic.png" alt="" width="200" height="200">
+
+        </div>
+    </div> -->
+
+    <!-- <img id="output" src="profile_pic.png" width="100" height="100">
+
+    <input name="photo" type="file" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])"> -->
+
+    <div class="mian">
+        <div class="inp_con">
+
+            <input type="file" id="myFile" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])" name="filename">
+            <img id="output" style="border-radius: 50%;" src="profile_pic.png" alt="" width="200" height="200">
+
+        </div>
+    </div>
+
+    </form>
+
+</body>
+</html>

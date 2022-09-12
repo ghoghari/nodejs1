@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="profile">
+
+        <div class="userimg"><img src="data:userimg/<%=c[0].userimg.contentType%>;base64,
+    <%=c[0].userimg.data.toString('base64')%> " height="150px" width="150px" class="usrimg">
+
+        </div>
+
+        <div class="username" ><%= c[0].username %></div>
+
+    </div>
+    
+       
+    <a href="http://localhost:3500/about">about</a><br>
+    <a href="http://localhost:3500/contact">contact</a><br>
+    <a href="http://localhost:3500/terms">terms and condition</a><br><br>
+    
+    <a href="http://localhost:3500/logout">logout</a><br>
+    <a href="http://localhost:3500/multi">multiple logout</a>
+
+    <a href="http://localhost:3500/forget">forget password</a>
+    <a href="http://192.168.1.96:3500/chat">start chat</a><br>
+
+    <a href="http://localhost:3500/profile">profile</a><br>
+
+</div>
+
+    <%= c[1].length %>
+
+    <% for(var i=0; i<c[1].length; i++) {%>
+        <div class="main">
+        
+        <div class="imges"> <img src="data:userimg/<%=c[1][i].userimg.contentType%>;base64,
+        <%=c[1][i].userimg.data.toString('base64')%> " height="150px" width="150px" class="usrimg"></div>          
+       <div class="name"><%= c[1][i].username %></div>
+    
+    </div>
+<% } %>
+               
+    <script>
+       
+    </script>
+
+</body>
+</html>

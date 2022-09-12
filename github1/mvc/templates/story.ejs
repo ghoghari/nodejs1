@@ -1,0 +1,233 @@
+<link rel="stylesheet" href="story.css">
+<nav class="navbar">
+    <div class="nav-wrapper">
+        <img src="img/logo.PNG" class="brand-img" alt="">
+        <input type="text" class="search-box" placeholder="search">
+        <div class="nav-items">
+            <img src="img/home.PNG" class="icon" alt="">
+            <a href="http://localhost:3500/chat"><img src="img/messenger.PNG" class="icon" alt=""></a>
+            <!-- <div class="inp_con">
+                <input type="file" id="myFile" name="filename">
+                <img src="https://www.sharelinkgenerator.com/slg-fb.jpg" alt="Girl in a jacket" width="200" height="200">
+            </div> -->
+            <!-- <div class="mian">
+                <div class="inp_con">
+                    <input type="file" id="myFile" name="filename">
+                    <a href="http://localhost:3500/post"><img src="img/add.PNG" class="icon" alt=""></a>
+                </div>
+            </div> -->
+            <a href="http://localhost:3500/post"><img src="img/add.PNG" class="icon" alt=""></a>
+            <img src="img/explore.PNG" class="icon" alt="">
+            <img src="like1234.png" class="icon" alt="">
+            <div class="icon user-profile"></div>
+        </div>
+    </div>
+</nav>
+
+<section class="main">
+    <div class="wrapper">
+        <div class="left-col">
+            <div class="status-wrapper">
+                <div class="status-card">
+                    <div class="profile-pic"><img src="img/cover 1.png" alt=""></div>
+                    <p class="username">user_name_1</p>
+                </div>
+                <div class="status-card">
+                    <div class="profile-pic"><img src="img/cover 2.png" alt=""></div>
+                    <p class="username">user_name_2</p>
+                </div>
+                <div class="status-card">
+                    <div class="profile-pic"><img src="img/cover 3.png" alt=""></div>
+                    <p class="username">user_name_3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="wrapper">
+        <div class="left-col">
+
+            <!-- <div class="post">
+                <div class="info">
+                    <div class="user">
+                        <div class="profile-pic"><img src="img/cover 1.png" alt=""></div>
+                        <p class="username">modern_web_channel</p>
+                    </div>
+                    <img src="img/option.PNG" class="options" alt="">    // image 1
+                </div>
+                <img src="img/cover 1.png" class="post-image" alt="">
+                <div class="post-content">
+                    <div class="reaction-wrapper">
+                        <img src="img/like.PNG" class="icon" alt="">
+                        <img src="img/comment.PNG" class="icon" alt="">
+                        <img src="img/send.PNG" class="icon" alt="">
+                        <img src="img/save.PNG" class="save icon" alt="">
+                    </div>
+                    <p class="likes">1,012 likes</p>
+                    <p class="description"><span>username </span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
+                    <p class="post-time">2 minutes ago</p>
+                </div>
+                <div class="comment-wrapper">
+                    <img src="img/smile.PNG" class="icon" alt="">
+                    <input type="text" class="comment-box" placeholder="Add a comment">
+                    <button class="comment-btn">post</button>
+                </div>
+            </div>  // for 1 image parts -->
+            
+            <% for(var i=0; i<abc.length; i++) {%>
+
+                <% for(var j=0; j<abc[i].post.length; j++) {%>
+
+                    <div class="post">
+                        <div class="info">
+                            <div class="user">
+                                <div class="profile-pic">
+                                    <!-- <img src="img/cover 1.png" alt=""> -->
+                                    <img src="data:userimg/<%=abc[i].userimg.contentType%>;base64,
+                                    <%=abc[i].userimg.data.toString('base64')%> " alt="">
+                                </div>
+                                <p class="username"><%= abc[i].username %></p>
+                            </div>
+                            <img src="img/option.PNG" class="options" alt="">
+                        </div>
+                        <!-- <img src="img/cover 1.png" class="post-image" alt="">  // image 1  -->
+                        <img src="data:userimg/<%=abc[i].post[j].data.contentType%>;base64,
+                        <%=abc[i].post[j].data.toString('base64')%> " class="post-image" alt="">  <!-- when we are addes likes and comments then we are change then we are analyze abo and below are different so specially saw -->
+                        <div class="post-content">
+                            <div class="reaction-wrapper">
+
+                                <!-- <%= a.username %> // our account name <br> it's required bcz this 2 things are solve one concept and space are required so -->
+                                <% for(var k=0; k<abc[i].post[j].likes.length; k++) {%>
+
+                                    <% if (abc[i].post[j].likes[k] == a.username ) {%>
+    
+                                        <!-- <%= com[0] = a.username %> -->
+                                        <%= com[a.username] %>
+    
+                                    <%}else { %>
+                                    <%}%>
+    
+                                <% } %> <!-- // for and if condition is for like -->
+
+                                <!-- <a href="http://localhost:3500/like/<%= i %>/<%= j %>/<%= com[0] %>"><img src="img/like.PNG" class="icon" alt=""></a> -->
+
+                                <% for(var n=0; n<abc[i].post[j].likes.length; n++) {%>
+
+                                    <% if (abc[i].post[j].likes[n] == a.username ) {%>
+    
+                                        <!-- <%= com[0] = a.username %> -->
+                                        <div style="display: none;"><%=  d[0] = a.username %></div> <!-- specially saw bcz this thing are confused me second time when we are assignde value in variable then those are show but our required not show -->
+    
+                                    <%}else { %>
+                                    <%}%>
+    
+                                <% } %> <!-- it's required for below -->  
+
+                                <% if (d[0] == a.username ) {%>
+                                    <a href="http://localhost:3500/like/<%= abc[i].username %>/<%= j %>/<%= com[0] %>"><img src="like123.png" style="height:30px" class="icon" alt=""></a>
+                                    <%}else { %>
+                                        <a href="http://localhost:3500/like/<%= abc[i].username %>/<%= j %>/<%= com[0] %>"><img src="like1234.png" style="height:30px" class="icon" alt=""></a>
+                                <%}%> <!-- like coulor -->
+
+                                <!-- <a href="http://localhost:3500/like/<%= abc[i].username %>/<%= j %>/<%= com[0] %>"><img src="img/like.PNG" class="icon" alt=""></a> i was change here pass id1 value bcz in next stape find to full database is object so i not working here username is required -->
+                                <a href="http://localhost:3500/comment/<%= abc[i].username %>/<%= j %>"><img src="img/comment.PNG" class="icon" alt=""></a>
+                                <img src="img/send.PNG" class="icon" alt="">
+                                <img src="img/save.PNG" class="save icon" alt="">
+                            </div>
+
+                            <p class="likes"><%=abc[i].post[j].likes.length%> likes</p>
+                            <p class="description"><span><%= abc[i].username %></span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
+                            <p> View all <%=abc[i].post[j].comments.length%> comments</p>
+                            <p class="post-time">2 minutes ago</p>
+
+                        </div>
+                        <div class="comment-wrapper">
+                            <img src="img/smile.PNG" class="icon" alt="">
+                            <input type="text" class="comment-box" placeholder="Add a comment">
+                            <button class="comment-btn">post</button>
+                        </div>
+                    </div>  <!-- // for 1 image parts -->
+
+                    <% } %> 
+                
+                <% } %>
+        </div>
+</div>
+
+<!-- <section class="main">
+
+    <div class="wrapper"> 
+        <div class="right-col">
+            <div class="profile-card">
+                <div class="profile-pic">
+                    <img src="img/profile-pic.png" alt="">
+                </div>
+                <div>
+                    <p class="username">modern_web_channel</p>
+                    <p class="sub-text">kunaal kumar</p>
+                </div>
+                <button class="action-btn">switch</button>
+            </div>
+            <p class="suggestion-text">Suggestions for you</p>
+            <div class="profile-card">
+                <div class="profile-pic">
+                    <img src="img/cover 9.png" alt="">
+                </div>
+                <div>
+                    <p class="username">modern_web_channel</p>
+                    <p class="sub-text">followed bu user</p>
+                </div>
+                <button class="action-btn">follow</button>
+            </div>
+            <div class="profile-card">
+                <div class="profile-pic">
+                    <img src="img/cover 10.png" alt="">
+                </div>
+                <div>
+                    <p class="username">modern_web_channel</p>
+                    <p class="sub-text">followed bu user</p>
+                </div>
+                <button class="action-btn">follow</button>
+            </div>
+            <div class="profile-card">
+                <div class="profile-pic">
+                    <img src="img/cover 11.png" alt="">
+                </div>
+                <div>
+                    <p class="username">modern_web_channel</p>
+                    <p class="sub-text">followed bu user</p>
+                </div>
+                <button class="action-btn">follow</button>
+            </div>
+            <div class="profile-card">
+                <div class="profile-pic">
+                    <img src="img/cover 12.png" alt="">
+                </div>
+                <div>
+                    <p class="username">modern_web_channel</p>
+                    <p class="sub-text">followed bu user</p>
+                </div>
+                <button class="action-btn">follow</button>
+            </div>
+            <div class="profile-card">
+                <div class="profile-pic">
+                    <img src="img/cover 13.png" alt="">
+                </div>
+                <div>
+                    <p class="username">modern_web_channel</p>
+                    <p class="sub-text">followed bu user</p>
+                </div>
+                <button class="action-btn">follow</button>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<ul>
+    <li class="icons"><a class="active" href="http://localhost:3500/story"><img src="Home.png" alt="" width="15px" height="15px"></a></li>
+    <li class="icons"><a href=""><img src="search button.png" alt="" width="15px" height="15px"></a></li>
+    <li class="icons"><a href="http://localhost:3500/reels"><img src="reels button.png" alt="" width="15px" height="15px"></a></li>
+    <li class="icons"><a href="http://localhost:3500/Suggestions"><img src="like1234.png" alt="" width="15px" height="15px"></a></li>
+    <li class="icons"><a href="http://localhost:3500/profile"><img class="abcd" src="data:userim<%=ab.contentType%>;base64,<%=ab.data.toString('base64')%> " height="15px" width="15px" class="usrimg"></a></li>
+</ul>

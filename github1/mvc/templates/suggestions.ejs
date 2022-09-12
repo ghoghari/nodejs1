@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="suggestions.css">
+</head>
+<body>
+
+            <div class="right-col" >
+                    <div class="" tabindex="0">
+                        <img src="" class="">
+                    </div>   
+                <% for(var i=0; i<supplies1.length; i++) {%>
+                    <div class="profile-card">   
+                        <div class="profile-pic" tabindex="0">
+                            <img src="data:userimg/<%=supplies1[i].contentType%>;base64,
+                            <%=supplies1[i].data.toString('base64')%> " class="usrimg">
+                        </div>
+                        <div>
+                            <p class="username"><%= supplies4[i] %></p>
+                            <p class="sub-text"> </p>
+                        </div>
+                        
+                        <% var test = last[i] %>
+
+                        <% if (test) {%>
+                            <button id="bt2tn" style="border-width: 0ch; height:25px; width:380px; border-radius: 2px; margin-left: 10px; margin-top: 10px; background-color:white" type="button">
+                            <a class="nikk" style="text-decoration: none; color:black" href="/following/<%= supplies5[i].id %>">Following</a></button>
+                        <%} else { %>
+                            <button id="btn" style="border-width: 0ch; height:25px; width:380px; border-radius: 2px; margin-left: 10px; margin-top: 10px; background-color:#00a0f7" type="button">
+                            <a class="nikk" href="/following/<%= supplies5[i].id %>" style="text-decoration: none; color:black">Follow</a></button>
+                        <%}%>
+
+                    </div>
+                <% } %>    
+            </div>
+
+    <a href="http://localhost:3500/followers">see all following & followers</a>
+
+    <script src="profile.js">
+
+    </script>
+
+</body>
+</html>

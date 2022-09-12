@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile.css">
+   
+</head>
+<body>
+
+    <header>
+
+        <div class="container">
+
+            <div class="profile">
+
+                <div class="profile-image">
+                    <input type="file" id="myFile" name="filename" class="profile-image">
+                    <img src="data:userimg/<%=c[0].userimg.contentType%>;base64,
+                    <%=c[0].userimg.data.toString('base64')%> " height="150px" width="150px" class="usrimg">
+                </div>
+
+                <!-- <div class="profile-image">
+                    <div class="profile-image"><img src="data:userimg/<%=c[0].userimg.contentType%>;base64,
+                    <%=c[0].userimg.data.toString('base64')%> " height="150px" width="150px" class="usrimg"></div>    
+                </div> -->
+    
+                <div class="profile-user-settings">
+    
+                    <h1 class="profile-user-name">
+                        <%= c[0].username %>
+                    </h1>
+    
+                    <a href="http://localhost:3500/edit" style="text-decoration:none; color:rgb(56, 55, 55)"><button class="btn profile-edit-btn">Edit Profile</button></a>
+    
+                    <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog"
+                            aria-hidden="true"></i></button>
+    
+                </div>
+    
+                <div class="profile-stats">
+    
+                    <ul>
+                        <li><span class="profile-stat-count"><%= a.post.length %></span> posts</li>
+                        <li><span class="profile-stat-count"><%= c[0].Followers.length %></span> followers</li>
+                        <li><span class="profile-stat-count"><%= c[0].Following.length %></span> following</li>
+                    </ul>
+    
+                </div>
+    
+                <div class="profile-bio">
+    
+                    <p><span class="profile-real-name"></span><%=a.Bio%></p>
+    
+                </div>
+    
+            </div>
+            <!-- End of profile section -->
+    
+        </div>
+        <!-- End of container -->
+    
+    </header>
+    
+    <main>
+    
+        <div class="container">
+    
+            <div class="gallery">
+    
+                <% for(var i=0; i<a.post.length; i++) {%>
+
+                    <div class="main">
+                    
+                        <div class="gallery-item" tabindex="0">
+    
+                            <img src="data:userimg/<%=a.post[i].data.contentType%>;base64,
+                            <%=a.post[i].data.toString('base64')%> " height="400px" width="400px" class="usrimg"> <!-- when i was added like and comments then we are change database so here we are change -->
+                            <!-- <img src="data:userimg/<%=a.post[i].contentType%>;base64,
+                            <%=a.post[i].toString('base64')%> " height="400px" width="400px" class="usrimg"> -->  
+    
+                            <div class="gallery-item-info">
+
+                                <ul>
+                                    <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i
+                                            class="fas fa-heart" aria-hidden="true"></i></li>
+                                    <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i
+                                            class="fas fa-comment" aria-hidden="true"></i></li>
+                                </ul>
+
+                            </div>
+    
+                        </div>
+                        
+                        <!-- <%= last[i] %> -->
+
+                        <!-- <button id="btn" style="border-width: 0ch; height:25px; width:380px; border-radius: 2px; margin-left: 10px; margin-top: 10px;" class="followbutton nikunj" type="button">
+                        <a class="nik" href="/following/<%= supplies5[i].id %>">Follow</a></button> -->
+
+                        <!-- // suggestions friends username -->
+                
+                </div>
+            <% } %>
+    
+            </div>
+    
+            <!--    show only one pic code & i tag number is not important 
+                                every 3 image after span tag add with parents div line add  -->
+                                
+            <!-- End of gallery -->
+    
+            <div class="loader"></div>
+    
+        </div>
+        <!-- End of container -->
+    
+    </main>
+    
+    <!-- <link rel="stylesheet" href="story.css">
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <div class="nav-items">
+                <img src="img/home.PNG" class="icon" alt="">
+                <a href="http://localhost:3500/chat"><img src="img/messenger.PNG" class="icon" alt=""></a>
+                <img src="img/add.PNG" class="icon" alt="">
+                <img src="img/explore.PNG" class="icon" alt="">
+                <img src="img/like.PNG" class="icon" alt="">
+                <div class="icon user-profile"></div>
+            </div>
+        </div>
+    </nav> -->
+
+    <script src="profile.js">
+
+        
+    </script>
+
+</body>
+
+</html>
